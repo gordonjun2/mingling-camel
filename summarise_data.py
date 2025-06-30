@@ -103,7 +103,7 @@ def summarise(text):
         return ""
 
 
-def split_records_into_chunks(records, model_name="gpt-4o-mini"):
+def split_records_into_chunks(records):
     """Split records into chunks that don't exceed the token limit."""
     chunks = []
     current_chunk = []

@@ -8,7 +8,7 @@ OPENAI_API_BASE_URL = os.getenv("OPENAI_API_BASE_URL")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-4.1-nano"
 
 TOKEN_LIMIT = 16384
 
@@ -29,7 +29,8 @@ You are given a list of Telegram chat messages in the following structured forma
   ...
 ]
 ```
-Your task is to summarize the conversation in batches by providing a concise, user-level summary of each participant's comments within the batch. Each user's comments (including their replies to others) should be analyzed for recurring themes, opinions, or contributions, and then summarized into a single sentence per user.
+
+Your task is to summarize the conversation in batches by providing a user-level summary of each participant's comments within the batch. Each user's comments (including their replies to others) should be analyzed for recurring themes, opinions, or contributions, and then summarized into a single sentence per user. If the original comments are in a language other than English, you must provide the summary in English regardless of the source language.
 The output must strictly follow this format:
 
 ```json
