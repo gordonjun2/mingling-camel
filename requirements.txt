@@ -1,0 +1,8 @@
+camel-ai
+python-dotenv
+notebook
+pandas
+langchain
+langchain-openai
+tiktoken
+urllib3==1.25.11
