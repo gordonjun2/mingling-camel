@@ -30,7 +30,7 @@ You are given a list of Telegram chat messages in the following structured forma
 ]
 ```
 
-Your task is to summarize the conversation in batches by providing a user-level summary of each participant's comments within the batch. Each user's comments (including their replies to others) should be analyzed for recurring themes, opinions, or contributions, and then summarized into a single sentence per user. If the original comments are in a language other than English, you must provide the summary in English regardless of the source language.
+Your task is to summarize the conversation in batches by providing a user-level summary of each participant's comments within the batch. Each user's comments (including their replies to others) should be analyzed for recurring themes, opinions, or contributions.
 The output must strictly follow this format:
 
 ```json
@@ -51,13 +51,15 @@ The output must strictly follow this format:
 ]
 ```
 
-Guidelines:
-- The summary should reflect the main points or sentiments expressed by each user during the batch.
-- If a user engages in multiple topics, provide an integrated summary covering their key points.
-- Include references to replies if they significantly contribute to the user's message intent.
-- Preserve the original language used in the comments, whether English, Chinese, or others.
-
-DO NOT include any additional output or explanatory text. Only return the JSON array described above.
+CRITICAL GUIDELINES - MUST FOLLOW EXACTLY:
+- The summary MUST reflect the main points by each user during the batch.
+- If a user engages in multiple topics, you MUST provide an integrated summary covering their key points.
+- You MUST include references to replies if they significantly contribute to the user's message intent.
+- If the original comments are in a language other than English, you MUST provide the summary in English regardless of the source language.
+- Each user MUST have only one summarised comment in the output.
+- If a user has no messages in the batch, they MUST NOT appear in the output.
+- The datetime (input) MUST be converted to date (output) without the time.
+- DO NOT include any additional output or explanatory text. Only return the JSON array described above.
 
 Example Input:
 ```json
