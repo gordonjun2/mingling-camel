@@ -3,14 +3,20 @@ import os
 
 load_dotenv()
 
+tiktoken_cache_dir = "./tiktoken_cache"
+os.environ["TIKTOKEN_CACHE_DIR"] = tiktoken_cache_dir
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_BASE_URL = os.getenv("OPENAI_API_BASE_URL")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+NEO4J_URI = os.getenv("NEO4J_URI")
+NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 MODEL = "gpt-4.1-nano"
 
-TOKEN_LIMIT = 16384
+TOKEN_LIMIT = 32768
 
 PROMPT_TEMPLATE = """
 You are given a list of Telegram chat messages in the following structured format:

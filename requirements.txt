@@ -5,4 +5,4 @@ pandas
 langchain
 langchain-openai
 tiktoken
-urllib3==1.25.11
+neo4j

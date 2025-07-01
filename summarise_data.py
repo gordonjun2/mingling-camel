@@ -8,6 +8,14 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import LLMChain
 from config import OPENAI_API_KEY, MODEL, PROMPT_TEMPLATE, TOKEN_LIMIT
 
+# Initialise LLM
+llm = ChatOpenAI(model_name=MODEL,
+                 openai_api_key=OPENAI_API_KEY,
+                 temperature=0.7)
+
+# Create prompt template
+prompt = PromptTemplate.from_template(PROMPT_TEMPLATE)
+
 
 class SummariseCounter:
     total_calls = 0
@@ -85,13 +93,6 @@ def summarise(text):
         return ""
 
     try:
-        llm = ChatOpenAI(model_name=MODEL,
-                         openai_api_key=OPENAI_API_KEY,
-                         temperature=0.7)
-
-        # Create prompt template
-        prompt = PromptTemplate.from_template(PROMPT_TEMPLATE)
-
         # Create and run the chain
         llm_chain = LLMChain(prompt=prompt, llm=llm)
         response = llm_chain.invoke(input={"content": text})
