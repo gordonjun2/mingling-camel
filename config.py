@@ -59,6 +59,7 @@ CRITICAL GUIDELINES - MUST FOLLOW EXACTLY:
 - Each user MUST have only one summarised comment in the output.
 - If a user has no messages in the batch, they MUST NOT appear in the output.
 - The datetime (input) MUST be converted to date (output) without the time.
+- Each object in the JSON array MUST contain exactly the keys: 'date', 'userId', 'username', 'summarisedComment'.
 - DO NOT include any additional output or explanatory text. Only return the JSON array described above.
 
 Example Input:
