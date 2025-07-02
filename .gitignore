@@ -208,3 +208,5 @@ __marimo__/
 
 # Others
 *.pkl
+*_vector_data/
+extra_data_processing.py

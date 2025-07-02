@@ -3,7 +3,7 @@ import pickle
 import os
 
 # Specify the path to your .pkl file
-pkl_path = './summarised_data/summarised_family_pig.pkl'
+pkl_path = './summarised_data/summarised_my_fa.pkl'
 
 
 def load_pickle_to_dataframe(file_path):

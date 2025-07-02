@@ -148,7 +148,7 @@ def clean_and_parse_summary(summary_str):
 
 if __name__ == "__main__":
     try:
-        pickle_path = './raw_data/family_pig.pkl'
+        pickle_path = './raw_data/my_fa.pkl'
         df = pd.read_pickle(pickle_path)
         chat_id = df['Chat ID'].iloc[0]
         daily_batches = batch_df_by_date(df)
