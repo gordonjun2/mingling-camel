@@ -1,9 +1,13 @@
 import pandas as pd
 import pickle
 import os
+import sys
+import numpy as np
+
+sys.modules['numpy._core.numeric'] = np.core.numeric
 
 # Specify the path to your .pkl file
-pkl_path = './summarised_data/summarised_my_fa.pkl'
+pkl_path = './summarised_data/summarised_family_pig.pkl'
 
 
 def load_pickle_to_dataframe(file_path):
